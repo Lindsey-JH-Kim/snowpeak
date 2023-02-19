@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+body h1{
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Stylish', sans-serif;
+}
+body h2{
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Stylish', sans-serif;
+}
+body h3{
+    font-size: 22px;
+    font-family: 'Stylish', sans-serif;
+}
+body h4{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+body h5{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+    body p{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+body button{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+
+body{
+    position: relative;
+}
+
+
+/* content */
+.cntWrap{
+    margin-top: 80px;
+}
+.cnt{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* contentA */
+.contentA h2{
+    line-height: 80px;
+}
+.contentA fieldset{
+  margin: 0 auto;
+  margin-top: 40px;
+  width: calc(100% / 12 * 8);
+}
+.table{
+  border: 0.5px solid black;
+}
+.contentA fieldset form h3{
+  width: calc(100% / 8);
+  padding-top: 9px;
+  padding-left: 20px;
+  border: 0.5px solid black;
+}
+.contentA fieldset form h5{
+  width: calc(100% / 8 * 7);
+  padding-top: 9px;
+  padding-left: 20px;
+  border: 0.5px solid black;
+}
+.contentA fieldset form .title{
+  display: flex;
+  height: 40px;
+}
+.contentA fieldset form .details{
+  display: flex;
+  height: 40px;
+}
+.contentA fieldset form .select{
+  display: flex;
+  height: 40px;
+}
+
+.contentA fieldset form button{
+  width: calc(100% / 12 * 2);
+  margin-top: 20px;
+  margin-left: calc(100% / 12 * 5);
+
+}
+

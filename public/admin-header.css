@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+body h1{
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Stylish', sans-serif;
+}
+body h2{
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Stylish', sans-serif;
+}
+body h3{
+    font-size: 22px;
+    font-family: 'Stylish', sans-serif;
+}
+body h4{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+body h5{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+    body p{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+body button{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+
+body{
+    position: relative;
+}
+
+/* header */
+.hdrWrap {
+  width: 100vw;
+  height: 80px;
+  background-color: rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.hdrWrap header {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;  
+}
+
+.hdrWrap header .hdrLogo {
+  width: calc(100% / 12 * 3);
+  height: 80px;
+  /* background-image: url(/img/snowpeak\ logo.png);
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat; */
+  float: left;
+}
+
+.hdrWrap .hdrLogo img {
+  width: 100%;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(90deg) brightness(106%) contrast(101%);
+  margin-top: 8px;
+}
+
+
+.hdrWrap .up{
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+}
+.hdrWrap .up i{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+.hdrWrap .up i:hover{
+  color: gray;
+}

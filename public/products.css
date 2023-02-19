@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+body h1{
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Stylish', sans-serif;
+}
+body h2{
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Stylish', sans-serif;
+}
+body h3{
+    font-size: 22px;
+    font-family: 'Stylish', sans-serif;
+}
+body h4{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+body h5{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+    body p{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+body button{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+
+body{
+    position: relative;
+}
+
+
+
+/* content */
+.cntWrap{
+  margin-top: 80px;
+}
+.cnt{
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* contentA */
+.contentA .category{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+}
+.contentA .category h3{
+    height: 80px;
+    line-height: 80px;
+    cursor: pointer;
+    color: gray;
+}
+.contentA .category h3:hover{
+    color: #000;
+}
+.addColor{
+    color: black;
+}
+.bnrWrap{
+  width: 100%;
+  height: 320px;
+  background-image: url(/public/img/img_products/products_category_all.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* contentB */
+.contentB .search{
+  width: calc(100% / 12 * 5);
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-top: 20px;
+  border: 0.5px solid grey;
+}
+.contentB .search .searchBox{
+    width: 90%;
+    height: 100%;
+    border: 0.5px solid grey;
+}
+.contentB .search .searchBox input{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.contentB .search .searchBtn{
+    width: 10%;
+    height: 100%;
+    line-height: 40px;
+    text-align: center;
+    color: gray;
+    border: 0.5px solid grey;
+    cursor: pointer;
+}
+.contentB section{
+  width: 100%;
+  height: 1400px;
+}
+.overflow{
+  overflow: hidden;
+}
+
+.contentB section .atcGroup{
+  margin-left: -20px;
+}
+.contentB section article{
+    width: calc(100% / 12 * 4 - 20px);
+    height: 440px;
+    margin-left:20px;
+    float: left;
+    margin-top: 40px;
+    cursor: pointer;
+}
+.contentB section article .itemContainer{
+    height: 320px;
+    width: 100%;
+    border-radius: 30px;
+}
+.contentB section article .itemContainer .itemImg{
+    height: 320px;
+    width: 100%;
+    background-image: url(/public/img/img_products/products_item_ripstop-shirt.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50px;
+}
+
+.contentB section article .itemTexts{
+    height: 120px;
+    line-height: 40px;
+    text-align: center;
+}
+.contentB button{
+    margin-top: 60px;
+    width: calc(100% / 12 * 4);
+    line-height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: lightgrey;
+    border: 0;
+    margin-left: calc(100% / 12 * 4);
+    cursor: pointer;
+    transition: background-color color 0.5s;
+}
+.contentB button:hover{
+    background-color: gray;
+    color: #fff;
+}
+
+

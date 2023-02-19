@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+body h1{
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Stylish', sans-serif;
+}
+body h2{
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Stylish', sans-serif;
+}
+body h3{
+    font-size: 22px;
+    font-family: 'Stylish', sans-serif;
+}
+body h4{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+body h5{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+    body p{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+body button{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+
+body{
+    position: relative;
+}
+
+
+
+/* content */
+.cntWrap{
+    margin-top: 80px;
+}
+.cnt{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* contentA */
+.contentA h2{
+    line-height: 80px;
+}
+.contentA fieldset{
+  margin: 0 auto;
+  width: calc(100% / 12 * 6);
+}
+.contentA fieldset:nth-of-type(2){
+  margin-top: 120px;
+}
+.contentA fieldset legend{
+  margin: 0 auto;
+}
+.contentA fieldset h3{
+  width: calc(100% / 6 * 2);
+  line-height: 40px;
+}
+.contentA fieldset h5{
+  width: calc(100% / 6 * 4 - 10px);
+  line-height: 40px;
+  
+}
+
+.contentA fieldset input{
+  line-height: 40px;
+  width: 100%;
+}
+.contentA fieldset .login{
+  display: flex;
+  justify-content: space-between;
+}
+.contentA fieldset .password{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.contentA fieldset button{
+  width: calc(100% / 12 * 2);
+  margin-left: calc(100% / 12 * 5);
+  margin-top: 20px;
+}
+
+

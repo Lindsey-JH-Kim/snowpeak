@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snowpeak products-detail</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4fd2a00047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/products-detail.css">
+  <link rel="stylesheet" href="/public/header.css">
+  <link rel="stylesheet" href="/public/footer.css">
+  <link rel="stylesheet" href="/public/reset.css">
+</head>
+<body>
+  <%-include ('header.ejs')%>
+
+<div class="cntWrap">
+  <div class="cnt contentA">
+    <h2>Product details</h2>
+    <section>
+      <div class="itemContainer">
+        <div class="itemImg" style="background-image: url(/public/itemImage/<%=itemlist._id%>.jpg);"></div>
+        <div class="itemTexts">
+          <h2><%=itemlist.itemname%></h2>
+          <h2><%=itemlist.itemprice%>원</h2>
+          <div class="quantity">
+            <h3>구매 수량</h3>
+            <div class="qttBox">
+              <div class="box minus" data-id="<%=itemlist.itemprice%>"><h3 data-id="<%=itemlist.itemprice%>">-</h3></div>
+              <div class="box number"><h3>1</h3></div>
+              <div class="box plus" data-id="<%=itemlist.itemprice%>"><h3 data-id="<%=itemlist.itemprice%>">+</h3></div>
+            </div>
+          </div>
+          <div class="amount">
+            <h3>총 상품 금액</h3>
+            <h3><span class="total"><%=itemlist.itemprice%>원</span></h3>
+          </div>
+          <div class="btn">
+            <button class="cart-button" data-itemname="<%=itemlist.itemname%>" data-itemprice="<%=itemlist.itemprice%>">장바구니 담기</button>
+            <button class="shop-button" data-itemname="<%=itemlist.itemname%>" data-itemprice="<%=itemlist.itemprice%>">구매하기</button>
+          </div>
+        </div>
+      </div>
+      <div class="itemInfo">
+        <div class="infoImg" style="background-image: url(/public/detailImage/<%=itemlist._id%>.jpg);"></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<%-include ('footer.html')%>
+<script>
+//구매수량 플러스 마이너스 버튼 누르면 숫자 바뀌기
+//소수점 숫자.toLocalString()
+
+var number = 1;
+var price;
+var totalPrice;
+
+if(number == 1){
+  $('.cart-button').click(function(e){
+    price = e.target.dataset.itemprice
+    price = price.replace(/,/g,"");
+    price = parseInt(price)
+    totalPrice = number * price
+    totalPrice = totalPrice.toLocaleString()
+  })
+  $('.shop-button').click(function(e){
+    price = e.target.dataset.itemprice
+    price = price.replace(/,/g,"");
+    price = parseInt(price)
+    totalPrice = number * price
+    totalPrice = totalPrice.toLocaleString()
+  })
+  $('.plus').click(function(e){
+    price = e.target.dataset.id;
+    price = price.replace(/,/g,"");
+    price = parseInt(price)
+    console.log(price)
+    number += 1
+    totalPrice = number * price
+    totalPrice = totalPrice.toLocaleString()
+    $('.number h3').html(number)
+    $('.amount .total').html(`${totalPrice}원`)
+    console.log(number)
+  })
+  $('.minus').click(function(e){
+    price = e.target.dataset.id;
+    price = price.replace(/,/g,"");
+    price = parseInt(price)
+    number -= 1 && number >= 2
+    totalPrice = number * price
+    totalPrice = totalPrice.toLocaleString()
+    $('.number h3').html(number)
+    $('.amount .total').html(`${totalPrice}원`)
+    console.log(number)
+  })
+}
+
+
+
+//cart-button클릭하면 cart collection에 db저장 ajax post요청하기
+//보낼데이터 유저아이디, itemname, item total price
+$('.cart-button').click(function(e){
+  console.log(totalPrice)
+  $.ajax({
+    method: 'POST',
+    url: '/addcart',
+    data: {itemname:`${e.target.dataset.itemname}`,
+          totalprice:`${totalPrice}`
+          }
+  }).done((err, result)=>{
+    alert(err)
+  })
+
+})
+
+//shop-button
+$('.shop-button').click(function(e){
+  console.log(totalPrice)
+  $.ajax({
+    method: 'POST',
+    url: '/addshop',
+    data: {itemname:`${e.target.dataset.itemname}`,
+          totalprice:`${totalPrice}`
+          }
+  }).done((err, result)=>{
+    alert(err)
+  })
+})
+
+
+
+  
+
+//화살표위방향 클릭하면 scroll top되기
+$('.up').click(function(){
+  console.log('click click click')
+  $(window).scrollTop(0)
+})
+  </script>
+
+
+</body>
+</html>

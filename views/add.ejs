@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snowpeak admin add</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4fd2a00047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/add.css">
+  <link rel="stylesheet" href="/public/admin-header.css">
+  <link rel="stylesheet" href="/public/footer.css">
+  <link rel="stylesheet" href="/public/reset.css">
+</head>
+<body>
+  <%-include ('admin-header.html')%>
+
+  <div class="cntWrap">
+    <div class="cnt contentA">
+      <h2>상품등록</h2>
+      <fieldset>
+        <form action="/itemlist" method="POST">
+          <div class="table">
+            <div class="title">
+              <h3>상품명</h3>
+              <h5><input name="itemname" type="text" size="80" style="border: 0;" placeholder="상품명을 입력해주세요."></h5>
+            </div>
+            <div class="details">
+              <h3>가격</h3>
+              <h5><input id="input-price" name="itemprice" type="text" size="80" style="border: 0;" placeholder="상품가격을 입력해주세요."></h5>
+            </div>
+            <div class="select">
+              <h3>분류</h3>
+              <h5><select name="itemselect" id="select">
+                <option value="">전체분류</option>
+                <option value="Apparel"selected="selected">Apparel</option>
+                <option value="Gear">Gear</option>
+                <option value="New Items">New Items</option>
+              </select></h5>
+            </div>
+          </div>
+          <button type="submit">add</button>
+        </form>
+      </fieldset>
+    </div>
+  </div>
+
+  <%-include ('footer.html')%>
+
+  <script>
+    //화살표위방향 클릭하면 scroll top되기
+    $('.up').click(function(){
+      console.log('click click click')
+      $(window).scrollTop(0)
+    })
+</script>
+
+
+</body>
+</html>

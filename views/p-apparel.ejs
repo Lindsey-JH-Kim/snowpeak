@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snowpeak products</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4fd2a00047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/products.css">
+  <link rel="stylesheet" href="/public/header.css">
+  <link rel="stylesheet" href="/public/footer.css">
+  <link rel="stylesheet" href="/public/reset.css">
+</head>
+<body>
+  <%-include ('header.ejs')%>
+
+  <div class="cntWrap">
+    <div class="cnt contentA">
+      <div class="category">
+        <a href="/products"><h3><span class="cgr">All Item</span></h3></a>
+        <a href="/apparel"><h3><span class="cgr addColor">Apparel</span></h3></a>
+        <a href="/gear"><h3><span class="cgr">Gear</span></h3></a>
+        <a href="/newitems"><h3><span class="cgr">New Items</span></h3></a>
+      </div>
+    </div>
+    <div class="bnrWrap"></div>
+    <div class="cnt contentB">
+      <div class="search">
+        <div class="searchBox"><input type="text" id="search-input"></div>
+        <div class="searchBtn" id="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+      </div>
+
+      <section class="overflow">
+        <div class="atcGroup">
+        <% for(var i = 0; i<apparel.length; i++){ %>
+          <a href="/products-detail/<%=apparel[i]._id%>">
+          <article>
+            <div class="itemContainer">
+              <div class="itemImg" style="background-image: url(/public/itemImage/<%=apparel[i]._id%>.jpg)"></div>
+
+            </div>
+            <div class="itemTexts">
+              <h3><%=apparel[i].itemname%></h3>
+              <h3><%=apparel[i].itemprice%>원</h3>
+            </div>
+          </article>         
+          </a>
+        <% } %>
+        </div>
+      </section>
+      <button>More Products</button>
+    </div>
+  </div>
+
+  <%-include ('footer.html')%>
+  
+
+  <script src="/js/products.js"></script>
+
+</body>
+</html>

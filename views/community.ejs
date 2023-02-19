@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snowpeak community</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4fd2a00047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/userservice-community.css">
+  <link rel="stylesheet" href="/public/header.css">
+  <link rel="stylesheet" href="/public/footer.css">
+  <link rel="stylesheet" href="/public/reset.css">
+</head>
+<body>
+  <%-include ('header.ejs')%>
+
+  <div class="cntWrap">
+    <div class="bnrWrap"></div>
+
+    <div class="cnt contentA">
+      <h2>Community Board</h2>
+      <a href="/post"><button>Blog Post</button></a>
+      <section class="overflow">
+        <div class="atcGroup">
+          <% for(var i=0; i < blogpost.length; i++){ %>
+            <a href="/detail/<%=blogpost[i]._id%>">
+            <article>
+              <div class="postImg" style="background-image:url(/public/image/<%=blogpost[i]._id%>.jpg)"></div>
+              <div class="postTexts">
+                <h3><%=blogpost[i].title%></h3>
+                <h5><%=blogpost[i].details%></h3>
+              </div>
+            </article> </a>
+          <% } %>
+        </div>
+      </section>
+      <button id="morebutton">More</button>
+    </div>
+  </div>
+
+  <%-include ('footer.html')%>
+  
+<script>
+    //화살표위방향 클릭하면 scroll top되기
+    $('.up').click(function(){
+      console.log('click click click')
+      $(window).scrollTop(0)
+    })
+</script>
+
+  <script src="/js/userservice-community.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snowpeak community edit</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4fd2a00047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/userservice-community-post.css">
+  <link rel="stylesheet" href="/public/header.css">
+  <link rel="stylesheet" href="/public/footer.css">
+  <link rel="stylesheet" href="/public/reset.css">
+</head>
+<body>
+  <%-include ('header.ejs')%>
+
+  <div class="cntWrap">
+    <div class="cnt contentA">
+      <h2>Blog Post</h2>
+      <fieldset>
+        <form action="/edit?_method=PUT" method="POST">
+          <input type="text" value="<%=blogpost._id%>" name="id" style="display: none">
+          <div class="table">
+          <div class="title">
+              <h3>제목</h3>
+              <h5><input id="input-title" value="<%=blogpost.title%>" type="text" name="title"></h5>
+            </div>
+            <div class="details">
+              <h3>내용</h3>
+              <h5><textarea id="input-details" name="details"><%=blogpost.details%></textarea></h5>
+            </div>
+          </div>
+            <button id="post-button" type="submit">Post</button>
+          </form>
+      </fieldset>
+    </div>
+  </div>
+
+
+  <%-include ('footer.html')%>
+  
+  <script>
+  //화살표위방향 클릭하면 scroll top되기
+    $('.up').click(function(){
+      console.log('click click click')
+      $(window).scrollTop(0)
+    })
+  </script>
+
+
+  <script src="/js/userservice-community-post.js"></script>
+
+</body>
+</html>

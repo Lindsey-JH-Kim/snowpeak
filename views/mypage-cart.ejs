@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snowpeak mypage cart</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4fd2a00047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/mypage-cart.css">
+  <link rel="stylesheet" href="/public/header.css">
+  <link rel="stylesheet" href="/public/footer.css">
+  <link rel="stylesheet" href="/public/reset.css">
+</head>
+<body>
+  <%-include ('header.ejs')%>
+
+  <div class="cntWrap">
+    <div class="cnt contentCategory">
+      <div class="category">
+        <a href="/cart"><h3><span class="cgr addColor">shopping Cart</span></h3></a>
+        <a href="/shop"><h3><span class="cgr">Shopping List</span></h3></a>
+      </div>
+    </div>
+    <div class="bnrWrap"></div>
+
+
+
+    <div class="cnt contentA">
+      <h2>Shopping Cart</h2>
+      <div class="titleContainer">
+        <div class="itemName"><h3>Item</h3></div>
+        <div class="itemPrice"><h3>Price</h3></div>
+        <div class="btn"></div>
+      </div>
+      <% for(var i=0; i<shopping.length; i++){ %>
+        <div class="detailContainer">
+          <div class="itemName"><h5><%=shopping[i].itemname%></h5></div>
+          <div class="itemPrice"><h5><%=shopping[i].totalprice%>원</h5></div>
+          <div class="btn">
+            <button class="cartedit" data-id="<%=shopping[i]._id%>">Buy</button>
+            <button class="cartdelete" data-id="<%=shopping[i]._id%>">Delete</button>
+          </div>
+        </div> 
+      <% } %>
+    </div>
+  </div>
+
+  <%-include ('footer.html')%>
+  
+  <script>
+  //장바구니목록 delete버튼 누르면 목록삭제
+  $('.cartdelete').click(function(e){
+    $.ajax({
+      method: 'DELETE',
+      url: `/cartdelete/${e.target.dataset.id}`
+    }).done(function(err,result){
+      alert(err);
+      window.location.href = '/cart'
+    })
+  })
+
+  //장바구니에서 buy버튼 누르면 category:'shop'으로 db수정하기
+  $('.cartedit').click(function(e){
+    $.ajax({
+      method: 'PUT',
+      url: '/cartedit?_method=PUT',
+      data: {id:e.target.dataset.id}
+    }).done(function(err,result){
+      alert(err);
+      window.location.href = '/cart'
+    })
+  })
+
+    //화살표위방향 클릭하면 scroll top되기
+    $('.up').click(function(){
+      console.log('click click click')
+      $(window).scrollTop(0)
+    })
+  </script>
+
+
+</body>
+</html>

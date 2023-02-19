@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+body h1{
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Stylish', sans-serif;
+}
+body h2{
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Stylish', sans-serif;
+}
+body h3{
+    font-size: 22px;
+    font-family: 'Stylish', sans-serif;
+}
+body h4{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+body h5{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+    body p{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+body button{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+
+body{
+    position: relative;
+}
+
+
+
+/* content */
+.cntWrap{
+  margin-top: 80px;
+}
+.cnt{
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* contentCategory */
+.contentCategory .category{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+}
+.contentCategory .category h3{
+    height: 80px;
+    line-height: 80px;
+    cursor: pointer;
+    color: gray;
+}
+.contentCategory .category h3:hover{
+    color: #000;
+}
+.addColor{
+    color: black;
+}
+
+.bnrWrap{
+  width: 100%;
+  height: 320px;
+  background-image: url(img/img-mypage/bnr-mypage.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+/* contentA */
+.contentA h2{
+  line-height: 80px;
+}
+.contentA .titleContainer{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.contentA .titleContainer .itemName{
+  width: calc(100% / 12 * 6);
+  line-height: 40px;
+}
+.contentA .titleContainer .itemPrice{
+  width: calc(100% / 12 * 2);
+  margin-left: 20px;
+}
+.contentA .titleContainer .btn{
+  width: calc(100% / 12 * 4 - 20px);
+  margin-left: 20px;
+}
+
+
+.contentA .detailContainer{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.contentA .detailContainer .itemName{
+  width: calc(100% / 12 * 6);
+  line-height: 40px;
+}
+.contentA .detailContainer .itemPrice{
+  width: calc(100% / 12 * 2);
+  margin-left: 20px;
+}
+.contentA .detailContainer .btn{
+  width: calc(100% / 12 * 4 - 20px);
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.contentA .detailContainer .btn button{
+  width: 45%;
+  cursor: pointer;
+  margin-left: 55%
+}
+
+
+
+
+
+
+

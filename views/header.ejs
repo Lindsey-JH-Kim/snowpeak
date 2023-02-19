@@ -1,0 +1,53 @@
+<div class="hdrWrap">
+  <header>
+      <div class="hdrLogo">
+        <a href="/"><img src="/public/img/snowpeak logo.png" alt=""></a>
+      </div>
+      <nav>
+          <ul class="navbar">
+              <a href="/products"><li>Products</li></a>
+              <a href="/community"><li>Community</li></a>
+              <li id="mypage">My Page</li>
+              <a href="/login"><li>Login/Register</li></a>
+            </ul>
+      </nav>
+  </header>
+  <a href="/chatroom">
+    <div class="chat-btn">
+      <p>채팅하기<br>
+      <i class="fa-brands fa-rocketchat"></i></p>
+    </div>
+  </a>
+  <div class="up"><i class="fa-solid fa-circle-up"></i></div>
+</div>
+
+<script>
+//화살표위방향 클릭하면 scroll top되기
+$('.up').click(function(){
+  console.log('click click click')
+  $(window).scrollTop(0)
+})
+
+//마이페이지 클릭하면 ajax GET요청 + 로그인안되어있을때 alert 후 로그인페이지로 이동
+  $('#mypage').click(function(){
+    $.ajax({
+      method: 'GET',
+      url: '/cart'
+    }).done(function(err,result){
+      if(err == '로그인이 필요합니다.'){
+      alert(err)
+      window.location.href = '/login'
+    } else{
+      window.location.href = '/cart'
+    }
+      // console.log(result);
+    })
+  })
+
+//chatting버튼 클릭하면 post요청하기
+$('.chat-btn').click(function(){
+  $.post('/chatroom').then(()=>{
+    console.log('채팅방게시물클릭 정보 생성완료')
+  })
+})
+</script>

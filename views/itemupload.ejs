@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snowpeak item upload</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4fd2a00047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/upload.css">
+  <link rel="stylesheet" href="/public/header.css">
+  <link rel="stylesheet" href="/public/footer.css">
+  <link rel="stylesheet" href="/public/reset.css">
+</head>
+<body>
+  <%-include ('admin-header.html')%>
+
+  <div class="cntWrap">
+    <div class="cnt contentA">
+      <h2>상품 대표 이미지 등록</h2>
+      <fieldset>
+        <form action="/itemimage" method="POST" enctype="multipart/form-data">
+          <div class="table">
+          <div class="upload">
+              <h3>사진<br>첨부</h3>
+              <h5><input id="input-upload" type="file"  name="input-itemupload"></h5>
+            </div>
+            <button id="post-button" type="submit">Post</button>
+          </form>
+      </fieldset>
+    </div>
+  </div>
+
+
+  <%-include ('footer.html')%>
+  
+<script>
+    //화살표위방향 클릭하면 scroll top되기
+    $('.up').click(function(){
+      console.log('click click click')
+      $(window).scrollTop(0)
+    })
+</script>
+
+</body>
+</html>

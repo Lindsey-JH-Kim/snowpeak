@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+body h1{
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Stylish', sans-serif;
+}
+body h2{
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Stylish', sans-serif;
+}
+body h3{
+    font-size: 22px;
+    font-family: 'Stylish', sans-serif;
+}
+body h4{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+body h5{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+    body p{
+    font-size: 16px;
+    font-family: 'Stylish', sans-serif;
+}
+body button{
+    font-size: 18px;
+    font-family: 'Stylish', sans-serif;
+}
+
+body{
+    position: relative;
+}
+
+
+/* content */
+.cntWrap{
+  margin-top: 80px;
+}
+.cnt{
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* contentCategory */
+.contentCategory .category{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+}
+.contentCategory .category h3{
+    height: 80px;
+    line-height: 80px;
+    cursor: pointer;
+    color: gray;
+}
+.contentCategory .category h3:hover{
+    color: #000;
+}
+.addColor{
+    color: black;
+}
+
+.bnrWrap{
+  width: 100%;
+  height: 320px;
+  background-image: url(img/img_userservice/bnr-userservice.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* contentA */
+.contentA h2{
+  line-height: 80px;
+}
+.contentA button:nth-of-type(1){
+  width: calc(100% / 12 * 2);
+  margin-left: calc(100% / 12 * 10);
+}
+.contentA section{
+  width: 100%;
+  height: 880px;
+}
+.overflow{
+  overflow: hidden;
+}
+
+
+.contentA section .atcGroup{
+  margin-left: -20px;
+}
+.contentA section article{
+    width: calc(100% / 12 * 4 - 20px);
+    height: 400px;
+    margin-left:20px;
+    float: left;
+    margin-top: 40px;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 30px;
+}
+.contentA section article .postImg{
+    height: 400px;
+    width: 100%;
+    border-radius: 30px;
+    background-position: center;
+    background-size: cover;
+    transition: opacity 0.1s;
+  }
+  
+
+
+.contentA section article .postTexts{
+  height: 160px;
+  line-height: 40px;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: -280px;
+  color: #000;
+  visibility: hidden;
+  overflow: hidden;
+  transition: visibility 0.1s;
+}
+
+.contentA section article:hover .postImg{
+  opacity: 30%;
+}
+.contentA section article:hover .postTexts{
+  visibility: visible;
+}
+.contentA #morebutton{
+    margin-top: 40px;
+    width: calc(100% / 12 * 4);
+    line-height: 40px;
+    text-align: center;
+    margin-left: calc(100% / 12 * 4);
+    cursor: pointer;
+}
+
+
+

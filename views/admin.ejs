@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snowpeak admin</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4fd2a00047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/admin.css">
+  <link rel="stylesheet" href="/public/admin-header.css">
+  <link rel="stylesheet" href="/public/footer.css">
+  <link rel="stylesheet" href="/public/reset.css">
+</head>
+<body>
+  <%-include ('admin-header.html')%>
+
+  <div class="cntWrap">
+    <div class="cnt contentA">
+      <h2>상품리스트</h2>
+      <a href="/add"><button id="add-button">상품등록</button></a>
+      <div class="titleContainer">
+        <div class="itemName"><h3>Item</h3></div>
+        <div class="itemPrice"><h3>Price</h3></div>
+        <div class="btn"></div>
+      </div>
+      <% for(var i=0; i<itemlist.length; i++){ %>
+        <div class="detailContainer">
+          <div class="itemName"><h5><%=itemlist[i].itemname%></h5></div>
+          <div class="itemPrice"><h5><%=itemlist[i].itemprice%>원</h5></div>
+          <div class="btn">
+            <a href="/itemedit/<%=itemlist[i]._id%>"><button>edit</button></a>
+            <button class="delete-button" data-id="<%=itemlist[i]._id%>">Delete</button>
+          </div>
+        </div>
+      <%} %>
+    </div>
+  </div>
+
+  <%-include ('footer.html')%>
+
+  <script>
+  //delete버튼 누르면 아이템리스트 삭제 ajax delete요청
+
+  $('.delete-button').click(function(e){
+    var itemid = e.target.dataset.id;
+
+    $.ajax({
+      method: 'DELETE',
+      url: `/itemdelete/${itemid}`,
+    }) .done((result)=>{
+      window.location.href = '/admin'
+      console.log('아이템리스트 삭제완료')
+    })
+  })
+
+    //화살표위방향 클릭하면 scroll top되기
+    $('.up').click(function(){
+      console.log('click click click')
+      $(window).scrollTop(0)
+    })
+
+  </script>
+  
+
+
+
+</body>
+</html>

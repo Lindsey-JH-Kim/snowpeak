@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snowpeak login</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4fd2a00047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/login.css">
+  <link rel="stylesheet" href="/public/header.css">
+  <link rel="stylesheet" href="/public/footer.css">
+  <link rel="stylesheet" href="/public/reset.css">
+</head>
+<body>
+  <%-include ('header.ejs')%>
+
+  <div class="cntWrap">
+    <div class="cnt contentA">
+      <fieldset>
+        <legend><h2>LogIn</h2></legend>
+        <form action="/login" method="POST">
+          <div class="login">
+            <h3>ID</h3>
+            <h5><input type="text"  placeholder="아이디를 입력해주세요." name="id"></h5>
+          </div>
+          <div class="password">
+            <h3>PASSWORD</h3>
+            <h5><input type="password" placeholder="패스워드를 입력해주세요." name="pw"></h5>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </fieldset>
+      <fieldset>
+        <legend><h2>Register</h2></legend>
+        <form action="/register" method="POST">
+          <div class="login">
+            <h3>ID</h3>
+            <h5><input type="text" placeholder="아이디를 입력해주세요." name="id"></h5>
+          </div>
+          <div class="password">
+            <h3>PASSWORD</h3>
+            <h5><input type="password" placeholder="패스워드를 입력해주세요." name="pw"></h5>
+          </div>
+          <button type="submit">Register</button>
+        </form>
+      </fieldset>
+    </div>
+  </div>
+
+
+  <%-include ('footer.html')%>
+
+  <script>
+    //화살표위방향 클릭하면 scroll top되기
+      $('.up').click(function(){
+        console.log('click click click')
+        $(window).scrollTop(0)
+      })
+  </script>
+
+</body>
+</html>
